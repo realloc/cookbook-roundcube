@@ -6,6 +6,7 @@ default['roundcube']['destination'] = '/var/www'
 default['roundcube']['database']['name'] = 'roundcube'
 default['roundcube']['database']['user'] = 'roundcube'
 default['roundcube']['workdir']['user'] = 'nginx'
+default['roundcube']['workdir']['group'] = 'nginx'
 
 
 
