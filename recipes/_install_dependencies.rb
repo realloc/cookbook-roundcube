@@ -11,7 +11,7 @@ end
 # Include other cookbooks/recipes
 include_recipe 'php::module_mysql'
 include_recipe 'mysql-chef_gem'
-include_recipe 'mysql::server'
+#include_recipe 'mysql::server'
 
 # Additional packages not covered by php cookbook
 %w( php-xml php-mcrypt php-mbstring php-intl ).each do |pkg|
