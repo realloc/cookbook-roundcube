@@ -4,7 +4,7 @@
 mysql_connection_info = {
   host:     'localhost',
   username: 'root',
-  password: node['mysql']['server_root_password']
+  password: node['roundcube']['mysql']['rootpw']
 }
 
 # Create the database and trigger data import
