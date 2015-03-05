@@ -5,7 +5,7 @@ ark 'roundcube' do
   checksum node['roundcube']['source']['checksum']
   version node['roundcube']['version']
   path node['roundcube']['destination']
-  owner 'apache'
-  group 'apache'
+  owner node['roundcube']['workdir']['user']
+  group node['roundcube']['workdir']['group']
   action :put
 end
