@@ -10,9 +10,3 @@
     mode '644'
   end
 end
-
-web_app 'roundcube' do
-  server_name 'roundcube.' + node['domain']
-  server_aliases ['roundcube']
-  docroot node['roundcube']['destination'] + '/roundcube'
-end
