@@ -46,7 +46,6 @@ attribute 'roundcube/config',
   :default => ''
 
 depends          'yum-epel'
-depends          'apache2'
 depends          'php'
 depends          'mysql'
 depends          'mysql-chef_gem'
