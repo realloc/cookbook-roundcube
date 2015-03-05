@@ -7,8 +7,7 @@ default['roundcube']['database']['name'] = 'roundcube'
 default['roundcube']['database']['user'] = 'roundcube'
 default['roundcube']['workdir']['user'] = 'nginx'
 default['roundcube']['workdir']['group'] = 'nginx'
-
-
+default['roundcube']['mysql']['rootpw'] = ''
 
 # Configuration variables for main.inc.php
 default['roundcube']['config']['default_host'] = 'ssl://localhost:993'
