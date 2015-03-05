@@ -6,8 +6,8 @@ node.set_unless['roundcube']['database']['password'] = secure_password
 
 # Destination directory for Roundcube
 directory node['roundcube']['destination'] do
-  user node['apache']['user']
-  group node['apache']['group']
+  user node['roundcube']['workdir']['user']
+  group node['roundcube']['workdir']['group']
   mode '755'
   recursive true
 end
