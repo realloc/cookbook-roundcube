@@ -5,6 +5,8 @@ default['roundcube']['version'] = '1.0.1'
 default['roundcube']['destination'] = '/var/www'
 default['roundcube']['database']['name'] = 'roundcube'
 default['roundcube']['database']['user'] = 'roundcube'
+default['roundcube']['workdir']['user'] = 'nginx'
+
 
 
 # Configuration variables for main.inc.php
