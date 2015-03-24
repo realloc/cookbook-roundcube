@@ -15,7 +15,5 @@ include_recipe 'mysql-chef_gem::mysql2'
 
 # Additional packages not covered by php cookbook
 %w( php-xml php-mcrypt php-mbstring php-intl ).each do |pkg|
-  package pkg do
-    notifies :restart, 'service[nginx]', :delayed
-  end
+  package pkg
 end
