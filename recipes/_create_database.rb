@@ -1,14 +1,5 @@
 # encoding: utf-8
 
-# MySQL Connection information used
-
-lazy {
-  {
-    host:     'localhost',
-    username: 'root',
-    password: node['roundcube']['mysql']['rootpw']
-  }
-}
 # Create the database and trigger data import
 mysql_database node['roundcube']['database']['name'] do
   connection lazy {
