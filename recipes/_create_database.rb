@@ -1,15 +1,23 @@
 # encoding: utf-8
 
 # MySQL Connection information used
-mysql_connection_info = {
-  host:     'localhost',
-  username: 'root',
-  password: node['roundcube']['mysql']['rootpw']
-}
 
+lazy {
+  {
+    host:     'localhost',
+    username: 'root',
+    password: node['roundcube']['mysql']['rootpw']
+  }
+}
 # Create the database and trigger data import
 mysql_database node['roundcube']['database']['name'] do
-  connection mysql_connection_info
+  connection lazy {
+    {
+      host:     'localhost',
+      username: 'root',
+      password: node['roundcube']['mysql']['rootpw']
+    }
+  }
   action :create
   notifies :run, 'execute[import-sql]', :delayed
 end
@@ -25,7 +33,13 @@ end
 
 # Create user and grant all privileges
 mysql_database_user node['roundcube']['database']['user'] do
-  connection mysql_connection_info
+  connection lazy {
+    {
+      host:     'localhost',
+      username: 'root',
+      password: node['roundcube']['mysql']['rootpw']
+    }
+  }
   password node['roundcube']['database']['password']
   database_name node['roundcube']['database']['name']
   privileges [:all]
@@ -34,7 +48,13 @@ end
 
 # Flush privileges to ensure they are loaded
 mysql_database 'flush the privileges' do
-  connection mysql_connection_info
+  connection lazy {
+    {
+      host:     'localhost',
+      username: 'root',
+      password: node['roundcube']['mysql']['rootpw']
+    }
+  }
   sql 'flush privileges'
   action :query
 end
